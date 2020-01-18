@@ -1,0 +1,16 @@
+@mixin btn-icon-variant($size) {
+  height: $size;
+  width: $size;
+  line-height: $size;
+  i { line-height: $size; }
+  &.btn-icon-lined {
+    line-height: ($size - 4px);
+    i { line-height: ($size - 4px); }
+
+    &.btn-icon-thin {
+      line-height: ($size - 2px);
+      i { line-height: ($size - 2px); }
+    }
+  }
+}
+

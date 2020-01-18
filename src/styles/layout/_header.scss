@@ -1,0 +1,183 @@
+// layout
+.app-header{
+  display: block;
+  position: relative;
+  z-index: $l_zindex_navbar;
+  height: $l_header_height;
+  width: 100%;
+  background-color: $l_white;
+
+  .header-btn {
+    height: $l_header_height;
+    border-radius: 0;
+    width: 58px;
+  }
+
+  .header-avatar {
+    max-width: 30px;
+    height: auto;
+  }
+
+  .toggle-sidebar{
+    display: block;
+  }
+}
+
+.fixed-header {
+  .app-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+}
+
+// material-ui
+#header-long-menu {
+  > div:last-child {
+    width: 340px;
+  }
+
+  div[class^="MuiListItemSecondaryAction"] {
+    opacity: .6;
+  }
+}
+
+.app-header-dropdown {
+  li {
+    font-size: $font-size-base;
+    height: auto;
+    padding: 0;
+
+    strong {
+      margin-left: 5px;
+    }
+
+    > div,
+    > a {
+      display: block;
+      width: 100%;
+      padding: 8px 16px;
+    }
+
+    a {
+      display: block;
+      color: $body-color;
+      @include hover-focus-active {
+        text-decoration: none;
+      }
+    }
+
+    i {
+      position: relative;
+      top: -1px;
+      vertical-align: middle;
+      margin-right: .5rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+.search-box {
+  max-width: 180px;
+  height: $l_header_height;
+  line-height: 24px;
+
+  &.list-inline-item {
+    padding: 10px 0;
+  }
+
+  // based on Bootstarp .input-group
+  .search-box-inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    // align-items: stretch;
+  }
+
+  input {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 7px 10px 5px;
+    width: 1%;
+    margin-bottom: 0;
+    border: none;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search-box-icon {
+    // display: flex;
+    // align-items: center;
+    padding: 6px 0 6px 10px;
+    i {
+      font-size: 20px;
+      vertical-align: middle;
+    }
+
+    .anticon {
+      padding: 0;
+    }
+  }
+
+  // 
+  .input-bar { 
+    position: absolute; 
+    display: block; 
+    width: 90%;
+    bottom: 0;
+    left: 5%;
+  }
+  .input-bar:before,
+  .input-bar:after {
+    position: absolute;
+    content: '';
+    height: 1px; 
+    width: 0;
+    bottom: 1px; 
+    background: $body-color; 
+    transition: all .25s;
+  }
+  .input-bar:before {
+    left: 50%;
+  }
+  .input-bar:after {
+    right: 50%; 
+  }  
+  input {
+    &:focus ~ .input-bar:before,
+    &:focus ~ .input-bar:after {
+      width: 50%;
+    }                    
+  }          
+}
+
+// desktop
+@media only screen and (min-width: $l_screen_md_min) {
+  .app-header {
+    .toggle-sidebar-btn {
+      display: none;
+    }
+
+    .brand {
+      display: inline-block;
+      width: $l_sidebar_width;
+      padding: 0 0 0 $l_sidebar_width_collapsed;
+      transition: padding .25s $l_transition_ease_out;
+      a {
+        text-decoration: none;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .nav-behind {
+    .app-header {
+      .brand {
+        padding-left: 0;
+      }
+    }
+  }
+}

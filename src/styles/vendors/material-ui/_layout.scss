@@ -1,0 +1,51 @@
+
+// Sidebar
+.app-sidebar {
+  .nav-icon,
+  .nav-text {
+    vertical-align: middle;
+  }
+  .nav-icon {
+    margin-top: -2px; // to make icon and text vertically aligned
+  }
+
+  .nav {
+    li {
+      > a {
+        display: block;
+        text-align: left;
+        min-width: inherit;
+        padding: 10px 16px;
+        border-radius: 0;
+        height: inherit;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+
+// 
+.app-header {
+  .bg-color-dark,
+  .bg-color-primary,
+  .bg-color-success,
+  .bg-color-info,
+  .bg-color-danger {
+    .header-btn {
+      color: #fff;
+    }
+  }
+}
+
+.header-icon-dropdown-item {
+  font-size: 14px;
+
+  > div > div {
+    padding-left: 56px;
+  }
+
+  .text-muted {
+    font-size: $font-size-sm;
+  }
+}

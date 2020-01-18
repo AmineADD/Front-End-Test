@@ -1,0 +1,143 @@
+@import "../../../../../styles/variables";
+
+.page-dashboard {
+  .metrics {
+    margin-top: 50px;
+
+    .metric-box {
+      margin-bottom: 15px;
+    }
+
+    .metric {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 26px;
+      color: theme-color("info");
+    }
+
+    .metric-info {
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #aaa;
+    }
+  }
+
+  .press {
+    display: block;  /* Remove bullet points; allow greater control of positioning */
+    padding: 0;      /* Override defaults for lists */
+    margin: 0;       /* Override defaults for lists */
+    width: 100%;     /* Get the row full width */
+}
+
+.press li {
+    display: inline-block; /* Get all images to show in a row */
+    width: 25%;            /* Show 4 logos per row */
+    text-align: center;    /* Centre align the images */
+}
+
+@media (max-width: 960px) and (min-width: 501px) {
+    .press li { width: 50%; } /* Show 2 logos per row on medium devices (tablets, phones in landscape) */
+}
+
+@media (max-width: 500px) {
+    .press li { width: 100%; } /* On small screens, show one logo per row */
+}
+  .box {
+    position: relative;
+    border-radius: $border-radius-lg;
+
+    * {
+      -webkit-backface-visibility: hidden;
+    }
+
+    .box-top,
+    .box-bottom {
+      height: 100px;
+      padding: 32px 15px;
+      font-size: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-weight: $display1-weight;
+      .size-h5 {
+        font-size: 24px;
+        margin-left: 2px;
+      }
+      .material-icons {
+        font-size: 40px;
+        line-height: 40px;
+      }
+    }
+
+    .box-bottom {
+      border-top: 1px solid rgba(0,0,0,.15);
+      @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+        padding-left: 15%;
+        padding-right: 15%;
+      }
+    }
+
+    .box-info {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      margin-top: -12px;
+      text-align: center;
+
+      span {
+        height: 24px;
+        display: inline-block;
+        padding: 4px 10px;
+        text-transform: uppercase;
+        line-height: 14px;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.15);
+        font-size: 12px;
+        color: $text-muted;
+        border-radius: 1em;
+        .material-icons {
+          line-height: 14px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+
+// Dark theme
+// --------------------------------------------------
+.theme-gray,
+.theme-dark {
+  .box-info {
+    .box-icon {
+      .material-icons {
+        color: rgba($theme_dark_text_color, .54);
+      }
+    }
+    .box-num {
+      color: rgba($theme_dark_text_color, .54);
+    }
+  }
+}
+
+.theme-gray {
+  .page-dashboard {
+    .box {
+      .box-info {
+        span {
+          background-color: $theme_gray_page_bg;
+        }
+      }
+    }
+  }
+}
+.theme-dark {
+  .page-dashboard {
+    .box {
+      .box-info {
+        span {
+          background-color: $theme_dark_page_bg;
+        }
+      }
+    }
+  }
+}
